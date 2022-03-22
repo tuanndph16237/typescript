@@ -1,0 +1,27 @@
+import { useForm, SubmitHandler } from "react-hook-form";
+
+type ProductAddProps = {
+    name: string;
+    onAdd: (product: TypeInputs) => void
+};
+type TypeInputs = {
+    name: string,
+    price: number
+}
+
+const ProductAdd = (props: ProductAddProps) =>{
+    const {register, handleSubmit, formState: {errors}} = useForm<TypeInputs>();
+    
+    const onSubmit: SubmitHandler<TypeInputs> = data =>{
+        console.log(data);
+    }
+    return (
+        <form onSubmit={handleSubmit(onSubmit)}>
+            {props.name}
+            <input type="text" placeholder="Ten san pham" {...register('name')} />
+            <input type="number" placeholder="Gia san pham" {...register('price')}/>
+            <button>add</button>
+        </form>
+    )
+}
+export default ProductAdd

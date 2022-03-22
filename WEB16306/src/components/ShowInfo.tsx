@@ -7,7 +7,7 @@ type ShowInfoProps ={
 
 const ShowInfo = ({name}: ShowInfoProps) =>{
     return (
-        <div>{name}</div>
+        <div>Hi {name}</div>
     )
 }
 export default ShowInfo
