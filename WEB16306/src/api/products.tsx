@@ -1,5 +1,6 @@
 import instance from "./instance";
-import { IProduct } from '../types/product';
+import { IProduct, ProductType } from '../types/product';
+import Product from "../components/Product";
 
 export const list = () =>{
     const url = "/products";
@@ -14,7 +15,11 @@ export const read = (id: string | undefined) => {
     const url = `/products/${id}`;
     return instance.get(url);
 }
-export const add = (id: string | undefined) => {
-    const url = `/products/${id}`;
-    return instance.post(url);
+export const add = (product: ProductType) => {
+    const url = "/products/";
+    return instance.post(url, Product);
+}
+export const update = (product: ProductType) => {
+    const url = `/products/${product.id}`;
+    return instance.post(url, Product);
 }
