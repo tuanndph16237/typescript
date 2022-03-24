@@ -1,7 +1,7 @@
 import React from 'react'
 import { IProduct } from '../types/product';
 type ProductManagerProps = {
-products: IProduct[];
+product: IProduct[];
 onRemove: (id: number) => void
 }
 
@@ -16,7 +16,7 @@ const ProductManager = (props: ProductManagerProps) => {
             <th></th>
           </thead>
           <tbody>
-            {props.products.map((item, index)=>{
+            {props.product.map((item, index)=>{
               return <tr key={index}>
                 <td>{index + 1}</td>
                 <td>{item.name}</td>
