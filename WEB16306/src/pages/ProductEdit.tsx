@@ -11,7 +11,7 @@ type FormInputs = {
     name: string,
     price: number
 }
-const ProductEdit = (props:Props)=>{
+const ProductEdit = (props: ProductEditProps)=>{
     const {register, handleSubmit, formState: {errors}, reset } =useForm<FormInputs>()
     const navigate = useNavigate();
     const {id} = useParams();
@@ -29,6 +29,8 @@ const ProductEdit = (props:Props)=>{
     return(
         <form action="" onSubmit={handleSubmit(onSubmit)}>
             <input type="text" {...register('name', {required: true})}/>
+            <input type="number" {...register("price")}/>
+            <button>Update</button>
         </form>
     )
 }

@@ -1,5 +1,5 @@
 import instance from "./instance";
-import { IProduct, ProductType } from '../types/product';
+import { IProduct, ProductType } from "../types/product";
 import Product from "../components/Product";
 
 export const list = () =>{
