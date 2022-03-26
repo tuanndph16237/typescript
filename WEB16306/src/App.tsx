@@ -1,19 +1,16 @@
-import { useEffect, useState } from 'react'
-import logo from './logo.svg'
+
+import 'swiper/css'
+import 'swiper/css/pagination'
+import 'swiper/css/effect-fade'
 import './App.css'
 
-
-interface IProduct{
-  id: number, 
-  name: string
-}
 function App() {
-  const [count, setCount] = useState(0)
 
 
   return (
     <div className="App">
-      
+      <Header/>
+      <Home/>
     </div>
   )
 }
